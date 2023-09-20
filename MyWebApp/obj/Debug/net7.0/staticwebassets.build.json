@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hDDIh4CmroTcZxSoe7SWAIdi7+VbCH3N6UfhREHoEe4=",
+  "Hash": "ijZA6WlZ+zts1rnwRoi9/s3MBu8Of1SjnXChoAk+Z0c=",
   "Source": "MyWebApp",
   "BasePath": "_content/MyWebApp",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/home/guilherme/Documents/meus-codigos/projetoRotaOeste/MyWebApp/wwwroot/data/Trator.json",
+      "SourceId": "MyWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/guilherme/Documents/meus-codigos/projetoRotaOeste/MyWebApp/wwwroot/",
+      "BasePath": "_content/MyWebApp",
+      "RelativePath": "data/Trator.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/data/Trator.json"
     },
     {
       "Identity": "/home/guilherme/Documents/meus-codigos/projetoRotaOeste/MyWebApp/wwwroot/favicon.ico",

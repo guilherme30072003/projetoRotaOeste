@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/home/guilherme/Documents/meus-codigos/projetoRotaOeste/MyWebApp/wwwroot/data/Trator.json",
+      "PackagePath": "staticwebassets/data/Trator.json"
+    },
+    {
       "Id": "/home/guilherme/Documents/meus-codigos/projetoRotaOeste/MyWebApp/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
