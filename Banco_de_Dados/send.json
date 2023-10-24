@@ -1,0 +1,44 @@
+{
+  "idInterfaceNegociacao": 0,
+  "notificacoes": {
+    "key": "ENCAMINHAMENTO",
+    "value": 0
+  },
+  "encaminhamentoAtivo": {
+    "idEncaminhamento": 0,
+    "idEvento": 0,
+    "idUsuarioEncaminhador": 0,
+    "idUsuario": 0,
+    "motivo": "string",
+    "idEmpresa": 0,
+    "encaminhamentoAtivo": true,
+    "dataInclusao": 0,
+    "dataAlteracao": 0,
+    "usuarioInc": "string",
+    "usuarioAlt": "string",
+    "origemRetorno": 0
+  },
+  "veiculo": {
+    "idVeiculo": "string",
+    "idCliente": 0,
+    "idEmpresa": 0,
+    "placa": "string",
+    "cor": "string",
+    "chassi": "string",
+    "modelo": "string"
+  },
+  "evento": {
+    "idCliente": 0,
+    "idEmpresa": 0,
+    "idGrupoEvento": "string",
+    "idTipoEvento": "string",
+    "formaContato": "string",
+    "midia": "string",
+    "temperatura": "BOLSAO",
+    "marca": "string",
+    "modelo": "string",
+    "idAgente": 0,
+    "observacao": "string",
+    "dataProximaAcao": 0
+  }
+}
