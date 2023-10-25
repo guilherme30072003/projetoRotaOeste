@@ -30,6 +30,7 @@ export default function Aviso({
       </div>
       <div className="mt-8 mb-8">
         <p>{description}</p>
+        <h1><strong>{gravidade}</strong></h1>
       </div>
       <button className="btn btn-outline">ACTION</button>
       <p className="mt-6 flex justify-end">23/10/2023</p>

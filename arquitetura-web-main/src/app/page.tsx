@@ -45,7 +45,7 @@ export default async function Home() {
       <Navbar></Navbar>
       <div className="flex flex-row">
         <div className="min-h-screen w-1/5 h-screen mr-4 hidden lg:block">
-          {/* <SideMenu setCor={setCor}></SideMenu> */}
+        <SideMenu></SideMenu>
         </div>
         <div className="block lg:hidden rounded-xl">
           <SideBarResponsive></SideBarResponsive>
