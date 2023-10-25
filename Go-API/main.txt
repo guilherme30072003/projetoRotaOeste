@@ -1,8 +1,11 @@
-package main
+/*package main
 
 import (
 	"net/http"
 	"github.com/gin-gonic/gin"
+	"encoding/json"
+	"os"
+	"fmt"
 	//"errors"
 )
 
@@ -14,7 +17,7 @@ type Alerta struct{
 	Evento []string `json:"evento"`
 }
 
-var alertas = []Alerta{
+var alertas = []Alerta{}
 	{IdInterfaceNegociacao: 0, 
 		Notificacoes: []string{"key:", "ENCAMINHAMENTO","value:", "1"}, 
 		EncaminhamentoAtivo: []string{"idEncaminhamento:", "1",
@@ -119,12 +122,75 @@ var alertas = []Alerta{
 	},
 }
 
-func getAlertas(context *gin.Context){
-	context.IndentedJSON(http.StatusOK, alertas)
+type Alerta struct{
+	 links []string `json"links"`
+	 Rel string  `json"rel"`
+	 Uri string  `json"uri"`
+	}
+	 /*string type1 `json""`
+	 string valueAsInteger `json""`
+	 string unit1 `json""`
+	 string type2 `json""`
+	 double valueAsDouble `json""`
+	 string unit2 `json""`
+	 string type3 `json""`
+	 string suspectParameterName `json""`
+	 string failureModeIndicator `json""`
+	 string bus1 `json""`
+	 string sourceAddress `json""`
+	 string threeLetterAcronym `json""`
+	 string id `json""`
+	 string description `json""`
+	 List<Link> links `json""`
+	 string type4 `json""`
+	 double lat `json""`
+	 double lon `json""`
+	 string type5 `json""`
+	 Duration duration `json""`
+	 string occurrences `json""`
+	 Reading engineHours `json""`
+	 int machineLinearTime `json""`
+	 string bus2 `json""`
+	 Definition definition `json""`
+	 string id2 `json""`
+	 DateTime time `json""`
+	 Location location `json""`
+	 string color `json""`
+	 string severity `json""`
+	 string acknowledgementStatus `json""`
+	 bool ignored `json""`
+	 bool invisible `json""`
+	 List<Link> links1 `json""`
+	 List<Link> links2 `json""`
+	 int total `json""`
+	 List<Value> values `json""`
+}
+
+
+func getAlertas(context *gin.Context, recebido Alerta){
+	context.IndentedJSON(http.StatusOK, recebido)
 }
 
 func main(){
 	router := gin.Default()
-	router.GET("/alertas", getAlertas)
+	arquivoJSON, err := os.Open("received.json")
+    if err != nil {
+        fmt.Println("Erro ao abrir o arquivo:", err)
+        return
+    }
+    defer arquivoJSON.Close()
+
+    var public Alerta Alerta 
+    decoder := json.NewDecoder(arquivoJSON)
+    err = decoder.Decode(&alerta)
+    if err != nil {
+        fmt.Println("Erro ao decodificar o JSON:", err)
+        return
+    }
+
+    // Agora, você pode usar suaStruct com os dados do JSON.
+    //fmt.Printf(alertas)
+
+	router.GET("/alertas", getAlertas(alerta))
 	router.Run("localhost:8080")
-}
+}*/
