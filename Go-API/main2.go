@@ -108,7 +108,7 @@ func main() {
 			results = append(results, result)
 		}
 
-		c.JSON(http.StatusOK, results)
+		c.IndentedJSON(http.StatusOK, results)
 	})
 
 	// Rota para filtragem de dados (você precisará implementar isso)

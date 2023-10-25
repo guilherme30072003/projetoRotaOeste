@@ -7,7 +7,7 @@ import SideMenu from '@/components/SideMenu'
 import { url } from 'inspector'
 import Image from 'next/image'
 
-import { PrismaClient, receivedalerts } from '@prisma/client'
+//import { PrismaClient, receivedalerts } from '@prisma/client'
 import { Key, useEffect, useState } from 'react'
 
 import { prisma } from '@/lib/prisma'
@@ -38,7 +38,6 @@ export default async function Home() {
   // }, [cor])
 
   console.log(alertas)
-  console.log(alertas.Lat!)
 
   return (
     <main className="">
