@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model encaminhamentoativo {
+  idencaminhamento      Int                   @id @default(autoincrement())
+  idevento              Int?
+  idusuarioencaminhador Int?
+  idusuario             Int?
+  motivo                String?               @db.VarChar(255)
+  idempresa             Int?
+  encaminhamentoativo   Boolean?
+  datainclusao          DateTime?             @db.Timestamptz(6)
+  dataalteracao         DateTime?             @db.Timestamptz(6)
+  usuarioinc            String?               @db.VarChar(255)
+  usuarioalt            String?               @db.VarChar(255)
+  origemretorno         Int?
+  interfacenegociacao   interfacenegociacao[]
+}
+
+model evento {
+  idevento            String                @id @db.VarChar(255)
+  idcliente           Int?
+  idempresa           Int?
+  idgrupoevento       String?               @db.VarChar(255)
+  idtipoevento        String?               @db.VarChar(255)
+  formacontato        String?               @db.VarChar(255)
+  midia               String?               @db.VarChar(255)
+  temperatura         String?               @db.VarChar(255)
+  marca               String?               @db.VarChar(255)
+  modelo              String?               @db.VarChar(255)
+  idagente            Int?
+  observacao          String?               @db.VarChar(255)
+  dataproximaacao     DateTime?             @db.Timestamptz(6)
+  interfacenegociacao interfacenegociacao[]
+}
+
+model interfacenegociacao {
+  idinterfacenegociacao Int                  @id @default(autoincrement())
+  idnotificacoes        Int?
+  idencaminhamentoativo Int?
+  idveiculo             String?              @db.VarChar(255)
+  idevento              String?              @db.VarChar(255)
+  encaminhamentoativo   encaminhamentoativo? @relation(fields: [idencaminhamentoativo], references: [idencaminhamento], onDelete: NoAction, onUpdate: NoAction)
+  evento                evento?              @relation(fields: [idevento], references: [idevento], onDelete: NoAction, onUpdate: NoAction)
+  notificacoes          notificacoes?        @relation(fields: [idnotificacoes], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  veiculo               veiculo?             @relation(fields: [idveiculo], references: [idveiculo], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model notificacoes {
+  id                  Int                   @id @default(autoincrement())
+  key                 String?               @db.VarChar(255)
+  value               Int?
+  interfacenegociacao interfacenegociacao[]
+}
+
+model receivedalerts {
+  id                    Int       @id @default(autoincrement())
+  alertid               String?   @db.VarChar(255)
+  occurrences           String?   @db.VarChar(255)
+  machinelineartime     BigInt?
+  bus                   String?   @db.VarChar(255)
+  time                  DateTime? @db.Timestamp(6)
+  color                 String?   @db.VarChar(255)
+  severity              String?   @db.VarChar(255)
+  acknowledgementstatus String?   @db.VarChar(255)
+  ignored               Boolean?
+  invisible             Boolean?
+  rel                   String?   @db.VarChar(255)
+  uri                   String?   @db.VarChar(255)
+  durationseconds       String?   @db.VarChar(255)
+  enginehoursreading    Float?
+  suspectparametername  String?   @db.VarChar(255)
+  failuremodeindicator  String?   @db.VarChar(255)
+  definitionbus         String?   @db.VarChar(255)
+  sourceaddress         String?   @db.VarChar(255)
+  threeletteracronym    String?   @db.VarChar(255)
+  definitionid          String?   @db.VarChar(255)
+  description           String?   @db.VarChar(255)
+  definitionrel         String?   @db.VarChar(255)
+  definitionuri         String?   @db.VarChar(255)
+  lat                   Float?
+  lon                   Float?
+}
+
+model veiculo {
+  idveiculo           String                @id @db.VarChar(255)
+  idcliente           Int?
+  idempresa           Int?
+  placa               String?               @db.VarChar(255)
+  cor                 String?               @db.VarChar(255)
+  chassi              String?               @db.VarChar(255)
+  modelo              String?               @db.VarChar(255)
+  interfacenegociacao interfacenegociacao[]
+}
